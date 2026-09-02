@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0e">
+  <meta name="description" content="A cinematic, bespoke interactive birthday experience created specifically for Ayesha on 3 September 2026.">
+  <meta name="author" content="Your Best Friend">
+
+  <title>Ayesha — 03 · 09 · 2026</title>
+
+  <!-- Google Web Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/chapters.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Progress Indicator -->
+  <div class="progress-bar-container" role="progressbar" aria-label="Experience Progress">
+    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+  </div>
+
+  <!-- Global App Header -->
+  <header class="app-header">
+    <div class="brand-mark">
+      <span class="brand-title">AYESHA</span>
+      <span class="brand-divider"></span>
+      <span class="brand-date">03.09.2026</span>
+    </div>
+
+    <div class="header-meta">
+      <div class="chapter-tracker">
+        <span>CHAPTER</span>
+        <span class="chapter-num" id="current-chapter-num">01</span>
+        <span>/ 06</span>
+        <span class="chapter-title-tag" id="current-chapter-title">The Prologue</span>
+      </div>
+
+      <button class="audio-toggle-btn" id="audio-toggle" aria-label="Toggle Ambient Audio">
+        <div class="audio-icon-bars">
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+          <span class="audio-bar"></span>
+        </div>
+        <span id="audio-status">SOUND OFF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Side Chapter Quick-Jump Navigation (Desktop) -->
+  <nav class="side-chapter-nav" aria-label="Chapter navigation">
+    <button class="chapter-nav-dot is-active" data-index="0" aria-label="Chapter 1: The Prologue">
+      <span class="nav-dot-label">01 · Prologue</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+    <button class="chapter-nav-dot" data-index="1" aria-label="Chapter 2: A New Friendship">
+      <span class="nav-dot-label">02 · The Spark</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+    <button class="chapter-nav-dot" data-index="2" aria-label="Chapter 3: Her">
+      <span class="nav-dot-label">03 · Presence</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+    <button class="chapter-nav-dot" data-index="3" aria-label="Chapter 4: The Little Things">
+      <span class="nav-dot-label">04 · Little Things</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+    <button class="chapter-nav-dot" data-index="4" aria-label="Chapter 5: The Birthday Reveal">
+      <span class="nav-dot-label">05 · Happy Birthday</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+    <button class="chapter-nav-dot" data-index="5" aria-label="Chapter 6: The Final Message">
+      <span class="nav-dot-label">06 · Final Message</span>
+      <span class="nav-dot-indicator"></span>
+    </button>
+  </nav>
+
+  <!-- Floating Next Button -->
+  <button class="floating-next-btn" id="next-chapter-btn" aria-label="Advance to Next Chapter">
+    <svg viewBox="0 0 24 24">
+      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+    </svg>
+  </button>
+
+  <!-- Custom Cursor Elements (Desktop) -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- MAIN MULTI-CHAPTER CONTAINER -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         PAGE 1 / CHAPTER 01: THE INTRODUCTION (THE PROLOGUE)
+         ==================================================================== -->
+    <section class="chapter-section is-active-chapter" id="chapter-1" data-chapter-index="0">
+      <canvas id="intro-canvas"></canvas>
+
+      <div class="chapter-inner intro-content">
+        <div class="intro-date-badge reveal-blur delay-100 is-revealed">
+          <span>03</span> / <span>09</span> / <span>2026</span>
+        </div>
+
+        <h1 class="intro-main-title reveal-up delay-300 is-revealed">
+          A little something for <span class="gold-accent">Ayesha.</span>
+        </h1>
+
+        <button class="begin-button reveal-up delay-500 is-revealed" id="begin-btn">
+          <span>Begin Journey</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 2 / CHAPTER 02: A NEW FRIENDSHIP (THE SPARK)
+         ==================================================================== -->
+    <section class="chapter-section" id="chapter-2" data-chapter-index="1">
+      <div class="chapter-inner">
+        <div class="chapter-eyebrow reveal-fade">CHAPTER 02 · A NEW FRIENDSHIP</div>
+        
+        <div class="chapter-2-grid">
+          <!-- Text Column -->
+          <div class="chapter-2-text">
+            <h2 class="chapter-headline reveal-up">
+              Some connections don't take years to feel <em>natural</em>.
+            </h2>
+
+            <blockquote class="editorial-quote reveal-up delay-200">
+              “A few months ago, you were simply someone I knew.<br>
+              Somehow, in a surprisingly short time, you became someone worth making this for.”
+            </blockquote>
+
+            <p class="editorial-body reveal-up delay-300">
+              Time is funny that way. We haven't known each other for years, yet our friendship found its rhythm almost instantly. There’s an effortless sincerity in the way we talk, laugh, and understand one another.
+            </p>
+            <p class="editorial-body reveal-up delay-400">
+              This space was created to commemorate that spark — a reminder that meaningful bonds are measured by depth, not just duration.
+            </p>
+          </div>
+
+          <!-- Editorial Photography Column (Photos 01, 02, 03) -->
+          <div class="chapter-2-gallery">
+            <!-- Lead Photo 01 -->
+            <div class="photo-card gallery-lead-card parallax-card reveal-up delay-100" data-depth="12">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha01.jpeg" data-fallback="assets/images/photo-01.svg" alt="Ayesha — First Impressions" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub Photo 02 -->
+            <div class="photo-card gallery-sub-card parallax-card reveal-up delay-200" data-depth="8">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha2.jpeg" data-fallback="assets/images/photo-02.svg" alt="Ayesha — Quiet Understanding" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub Photo 03 -->
+            <div class="photo-card gallery-sub-card parallax-card reveal-up delay-300" data-depth="10">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha3.jpeg" data-fallback="assets/images/photo-03.svg" alt="Ayesha — Unexpected Depth" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 3 / CHAPTER 03: HER (PRESENCE & GRACE)
+         ==================================================================== -->
+    <section class="chapter-section" id="chapter-3" data-chapter-index="2">
+      <div class="chapter-inner">
+        <div class="chapter-3-header">
+          <div class="chapter-eyebrow reveal-fade">CHAPTER 03 · HER</div>
+          <h2 class="chapter-headline reveal-up">
+            The quiet light you bring into <em>every space</em>.
+          </h2>
+          <p class="chapter-subhead reveal-up delay-200">
+            A celebration of your natural grace, effortless presence, and the authentic energy that makes being around you so refreshing.
+          </p>
+        </div>
+
+        <!-- 4-Photo Showcase (Photos 04, 05, 06, 07) -->
+        <div class="chapter-3-showcase">
+          <!-- Photo 04 -->
+          <div class="photo-card showcase-card reveal-up delay-100">
+            <div class="photo-card-inner">
+              <img src="assets/images/Ayesha4.jpeg" data-fallback="assets/images/photo-04.svg" alt="Ayesha — Her Presence" loading="lazy">
+              <div class="photo-card-overlay">
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 05 -->
+          <div class="photo-card showcase-card reveal-up delay-200">
+            <div class="photo-card-inner">
+              <img src="assets/images/Ayesha5.jpeg" data-fallback="assets/images/photo-05.svg" alt="Ayesha — The Grace in Laughter" loading="lazy">
+              <div class="photo-card-overlay">
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 06 -->
+          <div class="photo-card showcase-card reveal-up delay-300">
+            <div class="photo-card-inner">
+              <img src="assets/images/Ayesha6.jpeg" data-fallback="assets/images/photo-06.svg" alt="Ayesha — Quiet Confidence" loading="lazy">
+              <div class="photo-card-overlay">
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 07 -->
+          <div class="photo-card showcase-card reveal-up delay-400">
+            <div class="photo-card-inner">
+              <img src="assets/images/Ayesha7.jpeg" data-fallback="assets/images/photo-07.svg" alt="Ayesha — Unfiltered Authenticity" loading="lazy">
+              <div class="photo-card-overlay">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 4 / CHAPTER 04: THE LITTLE THINGS (GEOMETRY OF FRIENDSHIP)
+         ==================================================================== -->
+    <section class="chapter-section" id="chapter-4" data-chapter-index="3">
+      <div class="chapter-inner">
+        <div class="chapter-eyebrow reveal-fade">CHAPTER 04 · THE LITTLE THINGS</div>
+
+        <div class="chapter-4-composition">
+          <!-- Friendship Reflections List -->
+          <div class="reflections-list">
+            <h2 class="chapter-headline reveal-up">
+              The nuances that define <em>good company</em>.
+            </h2>
+
+            <div class="reflection-item reveal-up delay-100">
+              <span class="reflection-num">01 / REFLECTION</span>
+              <p class="reflection-text">“Some people don't need years to become important.”</p>
+            </div>
+
+            <div class="reflection-item reveal-up delay-200">
+              <span class="reflection-num">02 / REFLECTION</span>
+              <p class="reflection-text">“Sometimes a friendship simply fits — without pretense, without friction.”</p>
+            </div>
+
+            <div class="reflection-item reveal-up delay-300">
+              <span class="reflection-num">03 / REFLECTION</span>
+              <p class="reflection-text">“Maybe that's what makes meeting the right people so rare and interesting.”</p>
+            </div>
+          </div>
+
+          <!-- Photo Gallery (Photos 08, 09, 10) -->
+          <div class="chapter-4-gallery">
+            <!-- Photo 08 -->
+            <div class="photo-card gallery-tall-card photo-offset-top reveal-up delay-100">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha8.jpeg" data-fallback="assets/images/photo-08.svg" alt="Ayesha — Shared Perspectives" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 09 -->
+            <div class="photo-card gallery-tall-card photo-offset-bottom reveal-up delay-200">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha9.jpeg" data-fallback="assets/images/photo-09.svg" alt="Ayesha — Effortless Comfort" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 10 -->
+            <div class="photo-card gallery-wide-card reveal-up delay-300">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha10.jpeg" data-fallback="assets/images/photo-10.svg" alt="Ayesha — Meaning in the Ordinary" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 5 / CHAPTER 05: THE BIRTHDAY REVEAL (THE CLIMAX)
+         ==================================================================== -->
+    <section class="chapter-section" id="chapter-5" data-chapter-index="4">
+      <canvas id="reveal-canvas"></canvas>
+      <div class="reveal-halo"></div>
+
+      <div class="chapter-inner reveal-stage">
+        <div class="reveal-intro-tag reveal-blur">A CELEBRATION OF YOUR SPECIAL DAY</div>
+
+        <h2 class="reveal-title-h1 reveal-up delay-200">
+          HAPPY BIRTHDAY
+        </h2>
+
+        <div class="reveal-name-huge reveal-up delay-300">
+          AYESHA
+        </div>
+
+        <div class="reveal-date-stamp reveal-up delay-400">
+          <span>03</span> · <span>SEPTEMBER</span> · <span>2026</span>
+        </div>
+
+        <p class="reveal-submessage reveal-up delay-500">
+          To another year of graceful growth, unforgettable moments, quiet triumphs, and boundless happiness.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PAGE 6 / CHAPTER 06: THE FINAL MESSAGE (THE EPILOGUE)
+         ==================================================================== -->
+    <section class="chapter-section" id="chapter-6" data-chapter-index="5">
+      <div class="chapter-inner">
+        <div class="chapter-eyebrow reveal-fade">CHAPTER 06 · THE EPILOGUE</div>
+
+        <div class="chapter-6-layout">
+          <!-- Left: Hero Centerpiece Visual (Photo 12 & Photo 11) -->
+          <div class="chapter-6-visuals">
+            <div class="hero-portrait-card reveal-up delay-100">
+              <div class="hero-portrait-frame"></div>
+              <img src="assets/images/Ayesha12.jpeg" data-fallback="assets/images/photo-12.svg" alt="Portrait of Ayesha — 03.09.2026" class="ken-burns" loading="lazy">
+              <div class="photo-card-overlay">
+              </div>
+            </div>
+
+            <!-- Companion Photo 11 -->
+            <div class="photo-card hero-companion-card reveal-up delay-200" style="margin-top: 1.5rem; height: 220px;">
+              <div class="photo-card-inner">
+                <img src="assets/images/Ayesha11.jpeg" data-fallback="assets/images/photo-11.svg" alt="Ayesha — A Rare Connection" loading="lazy">
+                <div class="photo-card-overlay">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: The Heartfelt Friendship Letter -->
+          <div class="final-letter-card reveal-up delay-200">
+            <h3 class="letter-greeting">Dear Ayesha,</h3>
+
+            <p class="letter-body-p">
+              If someone had told me a few months ago that we would become this close so quickly, I probably wouldn’t have believed them. Time is funny like that — sometimes it takes years to build trust, and other times, a friendship just effortlessly clicks from the very beginning.
+            </p>
+
+            <p class="letter-body-p">
+              In the short time we’ve known each other, your presence has brought so much positivity, genuine laughter, and honest conversation. Having someone you can talk to freely, share thoughts with, and just be yourself around is rare, and I truly value that in our friendship.
+            </p>
+
+            <p class="letter-body-p">
+              As you step into another year of your life, I hope you receive everything you deserve: immense happiness, peace of mind, big milestones, and quiet moments of contentment. Never lose that authenticity, warmth, and grace that make you who you are.
+            </p>
+
+            <p class="letter-body-p">
+              I wanted to build this bespoke digital experience for you because a standard text message felt too ordinary for someone who has become such an important friend.
+            </p>
+
+            <p class="letter-closing-wish">
+              Have the most extraordinary birthday and an unforgettable year ahead.
+            </p>
+
+            <div class="letter-sign-off">
+              <div>
+                <div class="letter-signature">Your Best Friend Aadi</div>
+                <div class="photo-badge" style="margin-top: 4px; font-size: 0.7rem;">WITH SINCERE APPRECIATION</div>
+              </div>
+              <div class="letter-date-stamp">03 · 09 · 2026</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="final-actions-row">
+              <button class="action-btn-primary" id="replay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                </svg>
+                <span>Replay Journey</span>
+              </button>
+
+              <button class="action-btn-secondary" id="share-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+                <span>Copy Share Link</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div>03 · 09 · 2026 &nbsp;·&nbsp; CRAFTED SPECIALLY FOR <span>AYESHA</span></div>
+  </footer>
+
+  <!-- Lightbox Modal for Photo Zoom / Inspection -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo View">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Ayesha Gallery Photo" id="lightbox-img">
+      </div>
+      <div class="lightbox-details">
+        <h4 class="lightbox-title" id="lightbox-title"></h4>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/scroll-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
